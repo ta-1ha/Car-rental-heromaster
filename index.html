@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>car rental</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+         :root {
+            --color-primary: #F5993C;
+            --color-white: #Fff;
+            --card-padding: 2rem 8rem;
+        }
+        
+        .primarycolor {
+            color: var(--color-primary);
+        }
+        
+        body {
+            background-color: #F2F1F0;
+            color: blue;
+            list-style: none;
+            text-decoration: none;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        .header .navbar .closeicon,
+        .header #threebar {
+            display: none;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            padding: var(--card-padding);
+            align-items: center;
+        }
+        
+        .header .logo h2 {
+            font-weight: 600;
+            font-size: 2rem;
+            color: #313131;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        
+        .header .navbar ul {
+            list-style: none;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 2.6rem;
+        }
+        
+        .header .navbar ul a {
+            text-decoration: none;
+            color: #313131;
+            font-size: 17px;
+            transition: all 300ms ease;
+        }
+        
+        .header .navbar ul a:hover {
+            color: var(--color-primary);
+        }
+        
+        .header .signlog {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .header .signlog a {
+            color: var(--color-primary);
+            text-decoration: underline;
+        }
+        
+        .morenav {
+            font-size: 14px;
+            margin-left: 6px;
+        }
+        
+        .normalbtn {
+            background: var(--color-primary);
+            padding: 0.8rem 1.6rem;
+            border: none;
+            color: var(--color-white);
+            border-radius: 20px;
+            box-shadow: 0 0 4px black;
+            cursor: pointer;
+            transition: all 300ms ease;
+        }
+        
+        .signlog .normalbtn:hover {
+            box-shadow: none;
+        }
+        /* main bodyyyy */
+        
+        .main-body {
+            display: flex;
+            padding: var(--card-padding);
+            align-items: start;
+        }
+        
+        .main-body .side-img {
+            position: relative;
+            width: 96%;
+            height: 400px;
+            background: var(--color-primary);
+            border-bottom-left-radius: 130px;
+            border-top-left-radius: 50px;
+            border-top-right-radius: 10%;
+            border-bottom-right-radius: 10%;
+            box-shadow: 0 0 20px blue;
+            transition: all 0.3s ease;
+        }
+        
+        .main-body .side-img:hover {
+            box-shadow: none;
+        }
+        
+        .main-body .side-text {
+            width: 100%;
+        }
+        
+        .main-body .side-text h3 {
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 3rem;
+            font-weight: 400;
+            color: #313131;
+            margin-right: 30px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            line-height: 70px;
+        }
+        
+        .main-body .side-text p {
+            color: #909090;
+            margin-top: 20px;
+            font-family: 'poppins';
+            font-size: 19px;
+        }
+        
+        .main-body .side-img img {
+            position: absolute;
+            width: 122%;
+            left: -20%;
+            margin-right: 1rem;
+            animation: float 3s infinite ease-in-out;
+        }
+        
+        @keyframes float {
+            0%,
+            100% {
+                transform: translateY(-70px);
+            }
+            50% {
+                transform: translateX(-10px);
+            }
+        }
+        
+        .main-body .btns {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            gap: 2rem;
+        }
+        
+        .circle {
+            width: 40px;
+            height: 40px;
+            background: #Fff;
+            border-radius: 50px;
+            padding: 10px 13px;
+            box-shadow: 0 0 10px #F5993C;
+            cursor: pointer;
+            transition: all 300ms ease;
+        }
+        
+        .circle:hover {
+            box-shadow: none;
+            background: black;
+            color: white;
+        }
+        
+        .main-body .btns .watchvideo {
+            display: flex;
+            gap: 0.6rem;
+            align-items: center;
+            margin: 0;
+        }
+        
+        .main-body .btns .watchvideo span {
+            color: #313131;
+        }
+        
+        .main-body .btns .watchvideo span:hover {
+            color: #F5993C;
+            cursor: pointer;
+        }
+        
+        .main-body .btns .normalbtn {
+            background: transparent;
+            color: #313131;
+            box-shadow: none;
+            border: 1px solid #313131;
+            transition: all 300ms ease;
+            font-size: 17px;
+        }
+        
+        .main-body .btns .normalbtn:hover {
+            background: #F5993C;
+            color: white;
+            border: none;
+            box-shadow: 0 0 10px black;
+        }
+        
+        .main-body .box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            position: absolute;
+            z-index: 99;
+            margin: 6.3rem 0;
+            background-color: white;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            box-shadow: 0 0 10px blue;
+            transition: all 0.3s ease;
+        }
+        
+        .main-body .box:hover {
+            box-shadow: none;
+        }
+        
+        .box .minordetails {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+        
+        .box .minordetails span {
+            color: #909090;
+            font-size: 14px;
+        }
+        
+        .box .minordetails .locdetails {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.4rem;
+            justify-content: center;
+        }
+        
+        .box .minordetails .locdetails i {
+            color: #F5993C;
+            font-size: 14px;
+        }
+        
+        .box .minordetails .locdetails small,
+        .more i {
+            color: #313131;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        .box .minordetails .more {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+        
+        .minordetails .searchbtn {
+            padding: 0.7rem 2rem;
+            font-size: 15px;
+            background: #6ED4D4;
+        }
+        /* Responsive Design */
+        
+        @media (max-width: 1024px) {
+            .header {
+                padding: 1.5rem 5vw;
+            }
+            .main-body {
+                flex-direction: column;
+                text-align: center;
+            }
+            .side-text,
+            .side-img {
+                max-width: 100%;
+            }
+            .side-text h3 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                text-align: center;
+            }
+            .navbar ul {
+                display: none;
+                flex-direction: column;
+            }
+            .header .closeicon {
+                display: block;
+            }
+            .hamburger {
+                display: block;
+            }
+            .main-body {
+                padding: 2rem 5vw;
+            }
+            .side-text h3 {
+                font-size: 2rem;
+            }
+            .btn {
+                padding: 0.7rem 1.2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+             :root {
+                --padding: 1rem 5vw;
+            }
+            .header {
+                align-items: start;
+            }
+            .header #threebar {
+                display: block;
+            }
+            .header .navbar {
+                display: none;
+                gap: 0.2rem;
+            }
+            .header .closeicon {
+                display: none;
+                right: 0;
+            }
+            .header .signlog {
+                display: none;
+            }
+            .main-body {
+                padding: 2rem 4vw;
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                align-items: center;
+                margin: 0.3rem 1rem;
+                display: block;
+                text-align: center;
+                position: relative;
+            }
+            .side-text {
+                margin-left: 3rem;
+                width: 100%;
+            }
+            .btn {
+                padding: 0.6rem 1rem;
+                font-size: 0.9rem;
+            }
+            .main-body .box {
+                flex-direction: column;
+                position: absolute;
+                transform: translateY(50%);
+                right: -10%;
+                box-shadow: 2px 2px 20px blue;
+            }
+            .main-body .side-img {
+                width: 100%;
+                position: absolute;
+                transform: translateY(12%);
+                left: 10%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+
+        <div class="logo">
+            <h2>Adven<span class="primarycolor">car</span></h2>
+        </div>
+        <i class="fa-solid fa-bars" id="threebar"></i>
+        <div class="navbar">
+            <div class="closeicon">
+                <i class="fa-solid fa-rectangle-xmark"></i>
+            </div>
+            <ul>
+                <li><a href="about">About</a></li>
+                <li><a href="service">Service</a></li>
+                <li><a href="carcatalogue">Car Catalogue</a></li>
+                <li><a href="about">FAQ</a></li>
+                <li><a href="about"> More  <i class="fa-solid fa-chevron-down morenav"></i></a></li>
+            </ul>
+
+        </div>
+        <div class="signlog">
+            <a href="#">Sign In</a>
+            <button class="normalbtn">Sign Up</button>
+        </div>
+
+
+    </div>
+
+    <div class="main-body">
+        <div class="side-text">
+            <h3>Accompany your journey with comfort</h3>
+            <p>Car rent service for various terrain with guaranteed quality</p>
+            <div class="btns">
+                <button class="normalbtn">Learn more</button>
+
+                <p class="watchvideo">
+                    <i class="fa-solid fa-play circle"></i><span>Watch more</span></p>
+            </div>
+
+
+            <div class="box">
+                <div class="minordetails">
+                    <span>Location</span>
+                    <div class="locdetails">
+                        <i class="fa-solid fa-location-dot"></i><small>Choose Location</small></div>
+
+
+                </div>
+
+                <div class="minordetails">
+                    <span>Car Type</span>
+
+                    <div class="more">
+                        <div class="locdetails">
+                            <i class="fa-solid fa-car-side"></i> <small>City Car</small>
+                        </div>
+                        <div class="expand">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="minordetails">
+                    <span>Pick Up</span>
+                    <div class="more">
+                        <div class="locdetails">
+                            <i class="fa-solid fa-calendar-days"></i><small>17 july 2021</small>
+                        </div>
+                        <div class="expand">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="minordetails">
+                    <span>Return</span>
+                    <div class="more">
+                        <div class="locdetails">
+                            <i class="fa-solid fa-calendar-days"></i> <small>17 july 2021</small></div>
+                        <div class="expand">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="minordetails">
+                    <button class="normalbtn searchbtn">search</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="side-img">
+            <img src="img/sport-car-PBKFF76 1.png" alt="">
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const threeBar = document.getElementById("threebar");
+            const closeIcon = document.querySelector(".closeicon");
+            const navbar = document.querySelector(".navbar");
+
+            // Show navbar when clicking the three-bar icon
+            threeBar.addEventListener("click", function() {
+                navbar.style.display = "block";
+                closeIcon.style.display = "block"; // Show close icon
+                threeBar.style.display = "none"; // Hide three-bar icon
+            });
+
+            // Hide navbar when clicking the close icon
+            closeIcon.addEventListener("click", function() {
+                navbar.style.display = "none";
+                closeIcon.style.display = "none"; // Hide close icon
+                threeBar.style.display = "block"; // Show three-bar icon
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>
